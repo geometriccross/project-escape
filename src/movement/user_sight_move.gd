@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+@export var rotate_target: Camera3D
 @export var sensitivity: float = 0.01
 
 # アキュムレータ
@@ -10,7 +11,7 @@ func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseButton: 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	elif event.is_action_pressed("ui_cancel"): 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
-	sight_rotate(event, Input.mouse_mode, $Neck/Camera3D, sensitivity)
+	sight_rotate(event, Input.mouse_mode, rotate_target, sensitivity)
 
 func sight_rotate(event: InputEvent, mouse_mode: int, camera: Camera3D, sensitivity: float) -> void:
 	if event is InputEventMouseMotion and mouse_mode == Input.MOUSE_MODE_CAPTURED:
