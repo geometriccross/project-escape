@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Project Escape"
+run/main_scene="res://nodes/root.tscn"
 config/features=PackedStringArray("4.1", "C#", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GDShell="*res://addons/gdshell/scripts/gdshell_main.gd"
 
 [dotnet]
 
@@ -20,4 +25,12 @@ project/assembly_name="Project Escape"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gdUnit4/plugin.cfg")
+enabled=PackedStringArray("res://addons/gdshell/plugin.cfg", "res://addons/gut/plugin.cfg")
+
+[input]
+
+gdshell_toggle_ui={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":96,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
