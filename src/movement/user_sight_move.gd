@@ -1,7 +1,7 @@
 extends Node3D
 
-@export var rotate_target: Camera3D
-@export var sensitivity: float = 0.01
+@export var ROTATE_TARGET: Camera3D
+@export var SENSITIVITY: float = 0.01
 
 # アキュムレータ
 var rotation_x = 0
@@ -11,7 +11,7 @@ func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseButton: 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	elif event.is_action_pressed("ui_cancel"): 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
-	sight_rotate(event, Input.mouse_mode, rotate_target, sensitivity)
+	sight_rotate(event, Input.mouse_mode, ROTATE_TARGET, SENSITIVITY)
 
 func sight_rotate(event: InputEvent, mouse_mode: int, camera: Camera3D, sensitivity: float) -> void:
 	if event is InputEventMouseMotion and mouse_mode == Input.MOUSE_MODE_CAPTURED:
