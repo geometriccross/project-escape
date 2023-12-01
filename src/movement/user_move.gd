@@ -1,6 +1,5 @@
 extends CharacterBody3D
 
-
 @export var head: Node3D
 @export var speed: float = 5.0
 

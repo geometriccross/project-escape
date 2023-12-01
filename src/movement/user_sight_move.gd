@@ -1,4 +1,4 @@
-extends CharacterBody3D
+extends Node3D
 
 @export var rotate_target: Camera3D
 @export var sensitivity: float = 0.01
